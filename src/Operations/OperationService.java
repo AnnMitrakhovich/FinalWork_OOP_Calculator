@@ -1,6 +1,10 @@
 package Operations;
 
 import Data.Digit;
+import View.ViewAddition;
+import View.ViewDivision;
+import View.ViewMultiplication;
+import View.ViewSubtraction;
 
 import java.util.Scanner;
 
@@ -23,24 +27,28 @@ public class OperationService {
         if (arithmetic.equals("-")) {
             Operation operation1 = new Subtraction();
             result = operation1.getResult(firstDigit.getA(), secondDigit.getA());
-            System.out.println(result);
+            ViewSubtraction viewSubtraction = new ViewSubtraction();
+            viewSubtraction.printOnConsole(result);
         }
         if (arithmetic.equals("*")){
             Operation operation2 = new Multiplication();
             result = operation2.getResult(firstDigit.getA(), secondDigit.getA());
-            System.out.println(result);
+            ViewMultiplication viewMultiplication = new ViewMultiplication();
+            viewMultiplication.printOnConsole(result);
         }
         if (arithmetic.equals("/")){
             Operation operation3 = new Division();
             result = operation3.getResult(firstDigit.getA(), secondDigit.getA());
-            System.out.println(result);
+            ViewDivision viewDivision = new ViewDivision();
+            viewDivision.printOnConsole(result);
         }
         if (arithmetic.equals("+")){
             Operation operation4 = new Addition();
             result = operation4.getResult(firstDigit.getA(), secondDigit.getA());
-            System.out.println(result);
+            ViewAddition viewAddition = new ViewAddition();
+            viewAddition.printOnConsole(result);
         }
-        else System.out.println("***");
+        else System.out.println("\n***\n");
 
     }
 
